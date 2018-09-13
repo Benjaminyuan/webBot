@@ -23,6 +23,7 @@ def get_Data(content):
         name = ''
         for item in names:
             name+=item.string
+        try:
         remark = ele.find('span',{'class':'rating_num'}).string.strip()
         quote = ele.find('span',{'class':'inq'}).string.strip()
         temp = [name,remark,quote]
