@@ -18,10 +18,11 @@ def operationAuth(driver):
             elem = driver.find_elements_by_xpath(f'//*[@id="div{i}"]/div[@class="ui-controlgroup"]//a[@class="jqradio"]')
             print(elem)
             print(f'第{i}次')
-            elem[0].click()
+            pos = random.randint(0,len(elem)-1)
+            elem[pos].click()
         except:
             pass
-    for j in range(7,12,1):
+    for j in range(0,12,1):
         try:
             checks = driver.find_elements_by_xpath(f'//*[@id="div{j}"]/div[@class="ui-controlgroup"]//a[@class="jqcheck"]')
             print(checks)
@@ -30,7 +31,7 @@ def operationAuth(driver):
         except:
             pass
     checks = driver.find_elements_by_xpath('//*[@id="div12"]/ul/li')
-    print(checks)
+    print(len(checks))
     for item in range(0,len(checks)):
                 time.sleep(1)
                 checks[item].click()
